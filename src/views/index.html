@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="fetchData">Cargar Datos</button>
+        <div>
+            <table v-if="data.length">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Contact No</th>
+                        <th>Lastname</th>
+                        <th>Created Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in data" :key="item.id">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.contact_no }}</td>
+                        <td>{{ item.lastname }}</td>
+                        <td>{{ item.createdtime }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../controllers/app.js"></script>
+</body>
+</html>
