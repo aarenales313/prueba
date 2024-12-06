@@ -12,8 +12,6 @@ new Vue({
                     }
                 })
                 .then(response => {
-                    // Asignar los datos obtenidos
-                    console.log(response);
                     this.data = response.data.map(item => ({
                         id: item.id,
                         contact_no: item.contact_no,
